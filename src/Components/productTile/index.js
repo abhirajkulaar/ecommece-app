@@ -5,11 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
+import {Rating} from '@mui/material'
 
- function ProductCard({title, description, image, price, productId, onClickBuy, onClickDescription}) {
+ function ProductCard({title, description, image, price, id, rating}) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card  height='500px' sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
@@ -29,10 +29,16 @@ import { Link } from 'react-router-dom';
       <Typography variant="h6" color="text.secondary">
         {price}$
         </Typography>
+        <Rating  defaultValue={rating.rate} precision={0.5} readOnly />
+        <Typography variant="body" color="text.secondary">
+        ({rating.count})
+        </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="contained" size="small">Buy</Button>
-        <Button href={"/products/sampleId"}  size="small">
+        <Button href={`/products/${id}`}  size="small" variant='contained' >
+        Buy
+            </Button>
+        <Button href={`/products/${id}`}  size="small" sx={{ml:3}}>
             Learn More
             </Button>
       </CardActions>

@@ -1,8 +1,23 @@
 
 import ProductCard from "../../../Components/productTile"
+import InventoryContext from "../../../Context/Inventory/inventoryContext"
+import {Grid} from '@mui/material'
+import { useContext } from "react"
 function ProductList()
 {
-    return <ProductCard price = {200} image={"https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXMlMjBuaWtlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"} title="Shoes" description={"New in stock shoes"}></ProductCard>
+    const [inventory,updateInventory] = useContext(InventoryContext)
+    return (
+
+        <Grid container spacing={4}>
+        {inventory.map((product) => (
+          <Grid item key={product.id} xs={12} sm={6} md={4}>
+            <ProductCard price = {product.price} image={product.image} title={product.title} description={product.description} id={product.id} rating={product.rating}></ProductCard>
+          </Grid>
+        ))}
+      </Grid>
+    
+    )
+    
 }
 
 

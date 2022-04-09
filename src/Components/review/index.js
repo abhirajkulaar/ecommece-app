@@ -1,18 +1,21 @@
 import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography'
+import {Typography, CardContent} from '@mui/material'
 
 
-function Review({author,rating,description,timestamp})
+function Review({title,rating,description,})
 {
     return (
         
 
-        <>
-        <Typography variant="h5" color="initial">Author Name</Typography>
-        <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
-        <Typography variant="body1" color="initial">Lorem Ipsum sample review of product</Typography>
 
-        </>
+
+    <CardContent sx={{m:3}} style={{backgroundColor:'rgb(199 213 220)'}}>
+      <Typography variant="h5" color="initial">{title}</Typography>
+      
+      <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+      <Typography variant="body1" color="initial">{description}</Typography>
+    </CardContent>
+
 
 
     )

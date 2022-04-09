@@ -1,14 +1,22 @@
-import ProductImageCarousel from "../../Components/productImage"
-import ReviewsBar from "./reviewsBar"
-function ProductPage () {
+import ReviewsBar from "./reviewsBar";
+import AppBarTop from "../../Components/appBar";
+import ProductState from "../../Context/Product/productState";
+import ReviewState from "../../Context/Reviews/reviewState";
+import ProductInfo from "./productInfo";
 
-    return (
-        <>
-        <ProductImageCarousel></ProductImageCarousel>
-        <ReviewsBar></ReviewsBar>
-        </>
-    )
+function ProductPage() {
+  return (
+    <>
+      <AppBarTop></AppBarTop>
+      <ProductState>
+        <ReviewState>
+          <ProductInfo></ProductInfo>
+
+          <ReviewsBar></ReviewsBar>
+        </ReviewState>
+      </ProductState>
+    </>
+  );
 }
 
-
-export default ProductPage
+export default ProductPage;

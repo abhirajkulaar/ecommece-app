@@ -7,15 +7,20 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Menu, MenuItem } from "@mui/material";
+import { Home } from "@mui/icons-material";
 
 function AppBarTop() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={""} color="inherit">
-            <MenuIcon />
+
+        <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" href="/" color="inherit">
+            <Home />
           </IconButton>
+          {/* <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={""} color="inherit">
+            <MenuIcon />
+          </IconButton> */}
           <Menu
             anchorOrigin={{
               vertical: "top",
